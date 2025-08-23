@@ -9,7 +9,7 @@ Install NGINX Plus
     curl -I 127.0.0.1
     curl localhost
 
-Review NGINX Plus Default Configuration
+#Review NGINX Plus Default Configuration
 
 	cd /etc/nginx/
 	cat nginx.conf
