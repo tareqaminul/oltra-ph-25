@@ -2,6 +2,15 @@
 The examples build for OLTRA can be found below:
 
 **NGINX**
+
+**NGINX Data Plane Basics**
+- [**NGINX Basics**](basics/nginx-data-plane)
+- [**NGINX Web Server**](basics/web-server)
+- [**NGINX Load Balancer**](basics/lb)
+- [**NGINX API Gateway**](basics/apigw)
+- [**NGINX WAF**](basics/nap) 
+
+**NGINX Ingress**
 - [**Ingress resource examples with NGINX+**](nic/ingress-resources/)
 - [**CRD examples with NGINX+**](nic/custom-resources/)
 
