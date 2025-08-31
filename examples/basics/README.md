@@ -65,9 +65,9 @@ server {
 
 	sudo nginx -t
 	sudo nginx -s reload
-	curl 10.1.1.5:9001
-	curl 10.1.1.5:9002
-	curl 10.1.1.5:9003
+	curl 10.1.1.11:9001
+	curl 10.1.1.11:9002
+	curl 10.1.1.11:9003
 
 
 Configuring Load Balancer
@@ -429,3 +429,6 @@ Install a Demo Application
 	kubectl apply -f cafe-ingress.yaml
 	kubectl get svc
 	curl -H "Host: cafe.example.com" https://10.1.1.4:32691/tea --insecure
+ 
+ #Review NGINX Ingress Controller Default Configuration
+ 
