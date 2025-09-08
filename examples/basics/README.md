@@ -1,13 +1,4 @@
 #Install NGINX Plus - SKIP - DONE Already!!!
-
-    cd /opt/nplus-keys/
-    ls
-    sudo cp nginx-repo* /tmp/
-    cd /opt/install-nginx/
-    sudo ./install_nplus.sh 
-    nginx -v
-    curl -I 127.0.0.1
-    curl localhost
 	
 	sudo mkdir -p /etc/ssl/nginx
  	sudo cp <downloaded-file-name>.crt /etc/ssl/nginx/nginx-repo.crt
@@ -33,9 +24,11 @@
 	#Update the repository information
  	sudo apt update
   	#Install the nginx-plus package
-   sudo apt install -y nginx-plus
+   	sudo apt install -y nginx-plus
+	#Check installed version
+ 	nginx -v
 	
-#Review NGINX Plus Default Configuration
+# LAB-1: Explore - Review NGINX Plus Default Configuration
 
 	cd /etc/nginx/
 	cat nginx.conf
@@ -48,7 +41,7 @@
 	sudo nginx -V
 	sudo nginx -s reload
 
-Web Server Configuration
+#LAB-2 - Web Server Configuration
 	
 	cd /opt/services/
 	cd App1/
@@ -96,7 +89,7 @@ server {
 	curl 10.1.1.11:9003
 
 
-Configuring Load Balancer
+# LAB-3: Configuring Load Balancer
 
 	cd /etc/nginx/conf.d/
 	sudo vi lb.conf
@@ -125,7 +118,7 @@ server {
     }
 }
 
-### ###
+### Test Load Balancer ###
 
 	sudo nginx -t
 	sudo nginx -s reload
