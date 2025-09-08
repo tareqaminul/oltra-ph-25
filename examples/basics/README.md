@@ -1,4 +1,4 @@
-Install NGINX Plus
+#Install NGINX Plus - SKIP - DONE Already!!!
 
     cd /opt/nplus-keys/
     ls
@@ -8,7 +8,33 @@ Install NGINX Plus
     nginx -v
     curl -I 127.0.0.1
     curl localhost
+	
+	sudo mkdir -p /etc/ssl/nginx
+ 	sudo cp <downloaded-file-name>.crt /etc/ssl/nginx/nginx-repo.crt
+	sudo cp <downloaded-file-name>.key /etc/ssl/nginx/nginx-repo.key
+ 	sudo apt update && \
+	sudo apt install apt-transport-https \
+                 lsb-release \
+                 ca-certificates \
+                 wget \
+                 gnupg2 \
+                 ubuntu-keyring
+ 	wget -qO - https://cs.nginx.com/static/keys/nginx_signing.key \
+    	| gpg --dearmor \
+    	| sudo tee /usr/share/keyrings/nginx-archive-keyring.gpg >/dev/null
+ 		
+   	#Add the NGINX Plus repository
+  	printf "deb [signed-by=/usr/share/keyrings/nginx-archive-keyring.gpg] \
+	https://pkgs.nginx.com/plus/ubuntu `lsb_release -cs` nginx-plus\n" \
+	| sudo tee /etc/apt/sources.list.d/nginx-plus.list
 
+  	#Download the nginx-plus apt configuration to /etc/apt/apt.conf.d
+   	sudo wget -P /etc/apt/apt.conf.d https://cs.nginx.com/static/files/90pkgs-nginx
+	#Update the repository information
+ 	sudo apt update
+  	#Install the nginx-plus package
+   sudo apt install -y nginx-plus
+	
 #Review NGINX Plus Default Configuration
 
 	cd /etc/nginx/
