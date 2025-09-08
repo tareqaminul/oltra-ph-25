@@ -41,7 +41,7 @@
 	sudo nginx -V
 	sudo nginx -s reload
 
-#LAB-2 - Web Server Configuration
+# LAB-2 - Web Server Configuration
 	
 	cd /opt/services/
 	cd App1/
