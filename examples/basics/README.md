@@ -127,7 +127,7 @@ server {
 	curl localhost:9000
 
 
-Configuring NGINX Plus Dashboard
+# LAB-4: Configuring NGINX Plus Dashboard
 
 ### dashboard.conf ###
 
