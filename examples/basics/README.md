@@ -196,21 +196,21 @@ In this LAB, we will configure the NGINX to act as an API Gateway for an Httpbin
 
 ## Explore the API Deployment ##
 ### Check current Context ###
-kubectl config get-contexts
+	kubectl config get-contexts
 
 ### Switch to Rancher 2 Cluster ###
-kubectl config use-context rancher2
+	kubectl config use-context rancher2
 
 
 ### Test the API directly ###
-curl
+	curl
 
 ### Configure the NGINX for a simple API Gateway functionality ###
 
 make the config file in NIM. 
 
 ### Test through NGINX ###
-Curl 
+	Curl 
 
 
 
