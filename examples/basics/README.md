@@ -114,8 +114,12 @@ server {
 
 # LAB-3: Configuring Load Balancer
 ![NGINX as LB](images/nginx-as-rp.png)
-
-	cd /etc/nginx/conf.d/
+## UDF > Components > NIM > ACCESS > NIM UI
+### Let's use NGINX Instance Manager (NIM) for this part!
+NIM is the awesome NGINX Central Management tool, you can find details here:
+[**NIM**](https://docs.nginx.com/nginx-instance-manager/)
+	
+ 	cd /etc/nginx/conf.d/
 	sudo vi lb.conf
 
 ### lb.conf ###
