@@ -191,169 +191,26 @@ server {
 
 
 # LAB-5: Configuring NGINX Plus as an API Gateway
-On "docker_api" Box
 
-	cd /opt/ergast-f1-api/
-	sudo ./start.sh --build
-	sudo docker ps
-	curl localhost:8001/api/f1/drivers
+In this LAB, we will configure the NGINX to act as an API Gateway for an Httpbin API. Httpbin api is deployed in a modern app environment, i.e., the Kubernetes Cluster named "rancher2". We will enable Rate Limiting for any request to the API.
 
-On "ubuntu_plus" Box
-
-	cd /etc/nginx/conf.d/
-	sudo vi api_gateway.conf
-
-### api_gateway ###
-
-#limit_req_zone $remote_addr zone=perip:1m rate=2r/s;
-
-upstream f1-api {
-        server 10.1.1.7:8001; #validate IP address of docker_api
-        server 10.1.1.7:8002;
-
-}
-
-server {
-
-        listen 9443;
-        #listen 9443 ssl;
-        #ssl_certificate ssl/www.example.com.crt; 
-        #ssl_certificate_key ssl/www.example.com.key; 
-        #ssl_protocols TLSv1.3 TLSv1.2 TLSv1.1; 
-        #ssl_prefer_server_ciphers on; 
+## Explore the API Deployment ##
+kubectl config get-contexts
+kubectl config use-context rancher2
 
 
-        location /api/f1/drivers {
-        proxy_pass http://f1-api;
+## Test the API directly ##
+curl
 
-        #limit_req zone=perip nodelay;
-        #limit_req_status 429;                 
+## Configure the NGINX for a simple API Gateway functionality ##
 
-        }
+make the config file in NIM. 
 
-        location /api/f1/seasons {
-        proxy_pass http://f1-api;
-        }
-
-        location /api/f1/circuits {
-        proxy_pass http://f1-api;
-        }
-}
-
-### ###
-
-	sudo nginx -t
-	sudo nginx -s reload
-	curl localhost:9443/api/f1/drivers
-	curl localhost:9443/api/f1/seasons
+## Test through NGINX ##
+Curl 
 
 
-API Gateway - SSL Termination
-
-	cd /etc/nginx/
-	sudo mkdir ssl
-	cd ssl/
-	sudo cp /opt/ssl/www.example.com* .
-	ls
-	cd conf.d/
-	sudo vim api_gateway.conf
-	sudo nginx -t
-	sudo nginx -s reload
-	curl localhost:9443/api/f1/drivers
-	curl https://localhost:9443/api/f1/drivers --insecure
-
-Enable Rate Limiting
-
-	cd /etc/nginx/conf.d/
-	sudo vi api_gateway.conf
-	sudo nginx -t
-	sudo nginx -s reload
-	curl https://localhost:9443/api/f1/drivers --insecure
-	!!;!!;!!;!!;!!;
 
 
-# OPTIONAL LAB-6: Configuring NGINX App Protect (WAF)
-Install & Configure APP Protect
-
-"Install NAP"
-	cd /opt/install-nginx/
-	sudo cp -a /etc/nginx /etc/nginx-plus-backup
-	sudo apt-get install apt-transport-https lsb-release ca-certificates wget
-	sudo wget https://cs.nginx.com/static/keys/nginx_signing.key && sudo apt-key add nginx_signing.key
-	printf "deb https://plus-pkgs.nginx.com/ubuntu `lsb_release -cs` nginx-plus\n" | sudo tee /etc/apt/sources.list.d/nginx-plus.list
-	sudo apt-get update
-	sudo apt-get install app-protect
-	cd /etc/nginx/
-	sudo vi nginx.conf
-	# insert
-	# load_module modules/ngx_http_app_protect_module.so;
-	sudo service nginx stop
-	sudo service nginx start
-
-"Configure NAP"
-
-	cd /etc/nginx/conf.d/
-	sudo vi nap_dvwa.conf
-
-### nap_dvwa.conf ###
-
-    upstream app_backend_dvwa {
-        zone nap_protected_app 128k;
-        server   10.1.1.7:9091;
-    }
-
-
-    server {
-        listen 80 default_server;
-        proxy_http_version 1.1;
-
-        app_protect_enable off;
-        app_protect_policy_file "/etc/nginx/NginxDefaultPolicy.json";
-        app_protect_security_log_enable on;
-        #app_protect_security_log "/etc/nginx/logprofiles/log-default.json" syslog:server=10.200.1.1:5144;
-        app_protect_security_log "/opt/app_protect/share/defaults/log_default.json" /var/log/app_protect/security.log;
-
-        location / {
-            default_type text/html;
-            proxy_pass http://app_backend_dvwa;
-            proxy_set_header Host $host;
-        }
-
-        location /vulnerabilities/exec/ {
-
-            app_protect_enable off;
-            app_protect_policy_file "/etc/nginx/NginxDefaultPolicy.json";
-            app_protect_security_log_enable on;
-            #app_protect_security_log "/etc/nginx/logprofiles/log-default.json" syslog:server=10.200.1.1:5144;
-            app_protect_security_log "/opt/app_protect/share/defaults/log_default.json" /var/log/app_protect/security.log;
-
-            default_type text/html;
-            proxy_pass http://app_backend_dvwa;
-            proxy_set_header Host $host;
-        }
-
-        location /vulnerabilities/sqli/ {
-            app_protect_enable off;
-            app_protect_policy_file "/etc/nginx/dvwa-policy-v1.json";
-            app_protect_security_log_enable on;
-            #app_protect_security_log "/etc/nginx/logprofiles/log-custom.json" syslog:server=10.200.1.1:5144;
-            app_protect_security_log "/opt/app_protect/share/defaults/log_default.json" /var/log/app_protect/security.log;
-
-            default_type text/html;
-            proxy_pass http://app_backend_dvwa;
-            proxy_set_header Host $host;
-        }
-    }
-
-### ###
-
-Username / Password for DVWA Website: admin / password
-Command Injection: 127.0.0.1
-Command Injection: 127.0.0.1; cat /etc/passwd
-
-sudo cp /opt/dvwa-policy-v1.json /etc/nginx/
-
-SQL Injection: 2
-SQL Injection: %' and 1=0 union select null, concat(user,':',password) from users #
 # End of LAB Session 1 #
 ## For LAB Session 2: NGINX as Kubernetes Ingress Controller, Pls USE: https://github.com/tareqaminul/oltra-ph-25/tree/main/examples/nic ##
