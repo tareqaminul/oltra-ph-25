@@ -192,7 +192,11 @@ server {
 
 # LAB-5: Configuring NGINX Plus as an API Gateway
 
-In this LAB, we will configure the NGINX to act as an API Gateway for an Httpbin API. Httpbin api is deployed in a modern app environment, i.e., the Kubernetes Cluster named "rancher2". We will enable Rate Limiting for any request to the API.
+In this LAB, we will configure the NGINX to act as an API Gateway for an Httpbin API. Httpbin api is deployed in a modern app environment, i.e., the Kubernetes Cluster named "rancher2". We will enable Rate Limiting for any request to the API. For the Commands listed below, use the VSCode Terminal available at UDF > Client-vscode > VSCODE > Terminal
+
+![find-vscode](images/UDF-client-machine-vscode.png)
+
+![find-vscode-terminal](images/vscode-terminal.png)
 
 ## Explore the API Deployment ##
 ### Check current Context ###
