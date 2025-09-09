@@ -122,14 +122,14 @@ NIM is the awesome NGINX Central Management tool, you can find details here:
  	cd /etc/nginx/conf.d/
 	sudo vi lb.conf
 
-### lb.conf ###
-upstream backend_servers {
+	### lb.conf ###
+	upstream backend_servers {
     zone backend_server_zone 64k;
     server 127.0.0.1:9001;
     server 127.0.0.1:9002;
-}
+	}
 
-server {
+	server {
     listen 9000;
     autoindex on;
 
