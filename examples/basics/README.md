@@ -195,8 +195,10 @@ server {
 In this LAB, we will configure the NGINX to act as an API Gateway for an Httpbin API. Httpbin api is deployed in a modern app environment, i.e., the Kubernetes Cluster named "rancher2". We will enable Rate Limiting for any request to the API.
 
 ## Explore the API Deployment ##
+# Check current Context
 kubectl config get-contexts
 
+# Switch to Rancher 2 Cluster 
 kubectl config use-context rancher2
 
 
