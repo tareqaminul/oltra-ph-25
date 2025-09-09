@@ -1,3 +1,23 @@
+
+##### NGINX API Gw Test ###
+# Basic Request Tests
+# Simple GET
+curl http://10.1.1.11:30080/get
+
+# Rate Limiting test with no violation 
+for i in {1..10}; do   curl -i -s -o /dev/null -w "%{http_code}\n" http://10.1.1.11:8000/get;   sleep 1; done
+
+# Rate Limiting test with violation 
+for i in {1..10}; do   curl -i -s -o /dev/null -w "%{http_code}\n" http://10.1.1.11:8000/get;  done
+
+
+
+
+
+
+
+
+############################## Direct HTTPBIN API Test ################################
 # Basic Request Tests
 # Simple GET
 curl http://10.1.20.22:30080/get
