@@ -121,7 +121,7 @@ NIM is the awesome NGINX Central Management tool, you can find details here:
 
 ### Acces the NIM UI and find your NGINX instances ###
 
-To sign in use the username admin and password <find-in-UDF>
+To sign in use the username "admin" and password "find-in-UDF"
 ![NIM-Access](images/NIM-UDF-sign-in.webp)
 
 Discover the instances in NGINX Instance Manager.
