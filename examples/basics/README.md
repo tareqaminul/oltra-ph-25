@@ -195,25 +195,25 @@ server {
 In this LAB, we will configure the NGINX to act as an API Gateway for an Httpbin API. Httpbin api is deployed in a modern app environment, i.e., the Kubernetes Cluster named "rancher2". We will enable Rate Limiting for any request to the API.
 
 ## Explore the API Deployment ##
-# Check current Context
+### Check current Context ###
 kubectl config get-contexts
 
-# Switch to Rancher 2 Cluster 
+### Switch to Rancher 2 Cluster ###
 kubectl config use-context rancher2
 
 
-## Test the API directly ##
+### Test the API directly ###
 curl
 
-## Configure the NGINX for a simple API Gateway functionality ##
+### Configure the NGINX for a simple API Gateway functionality ###
 
 make the config file in NIM. 
 
-## Test through NGINX ##
+### Test through NGINX ###
 Curl 
 
 
 
 
 # End of LAB Session 1 #
-## For LAB Session 2: NGINX as Kubernetes Ingress Controller, Pls USE: https://github.com/tareqaminul/oltra-ph-25/tree/main/examples/nic ##
+### For LAB Session 2: NGINX as Kubernetes Ingress Controller, Pls USE: https://github.com/tareqaminul/oltra-ph-25/tree/main/examples/nic ###
