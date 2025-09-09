@@ -119,6 +119,13 @@ server {
 NIM is the awesome NGINX Central Management tool, you can find details here:
 [**NIM**](https://docs.nginx.com/nginx-instance-manager/)
 
+### Acces the NIM UI and find your NGINX instances ###
+
+To sign in use the username admin and password <find-in-UDF>
+![NIM-Access](images/NIM-UDF-sign-in.webp)
+
+Discover the instances in NGINX Instance Manager.
+
 After you are done with exploring the intuitive NIM UI, create the lb.conf in the directory /etc/nginx/conf.d/ :
 
 NIM UI > Instance Groups > Click "Add File" and Enter the file path and name: lb.conf 
