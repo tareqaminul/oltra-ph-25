@@ -112,7 +112,7 @@ server {
 
 
 # LAB-3: Configuring Load Balancer
-![NGINX as LB](https://www.google.com/url?sa=i&url=https%3A%2F%2Fmedium.com%2F%40ozanbozkurtt96%2Fnginx-reverse-proxy-guide-d36c47ec6879&psig=AOvVaw047Jn_oauc0o4JKVglJA-1&ust=1757485886326000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCJiIsKmHy48DFQAAAAAdAAAAABAb)
+![NGINX as LB](/nginx-as-rp.png)
 	cd /etc/nginx/conf.d/
 	sudo vi lb.conf
 
