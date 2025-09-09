@@ -352,54 +352,5 @@ sudo cp /opt/dvwa-policy-v1.json /etc/nginx/
 
 SQL Injection: 2
 SQL Injection: %' and 1=0 union select null, concat(user,':',password) from users #
-
-Install K8s
-
-	sudo su
-	apt-get update
-	curl -s https://raw.githubusercontent.com/jay-nginx/basic-workshop-udf/main/install-K8s.sh | bash
-	kubectl version
-	kubectl get pods
-
-
-Install HELM
-
-	cd /opt/
-	git clone https://github.com/nginxinc/kubernetes-ingress/
-	cd kubernetes-ingress/deployments/helm-chart
-	git checkout v1.9.1
-	curl https://baltocdn.com/helm/signing.asc | sudo apt-key add -
-	sudo apt-get install apt-transport-https --yes
-	echo "deb https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
-	sudo apt-get update
-	sudo apt-get install helm
-	helm repo add nginx-stable https://helm.nginx.com/stable
-	helm repo update
-
-Make NGINX Plus Container
-
-	cd /opt/kubernetes-ingress/
-	sudo cp /opt/nplus-keys/nginx-repo* .
-	apt install make
-	make DOCKERFILE=DockerfileForPlus PREFIX=nginx-plus-ingress
-	Note: Ignore the errors received for pushing the image to a repo
-	docker images
-	helm install my-release nginx-stable/nginx-ingress --set controller.image.repository=nginx-plus-ingress --set controller.nginxplus=true
-
-Install a Demo Application
-
-	cd /opt/kubernetes-ingress/examples/complete-example
-	ls
-	cat cafe.yaml
-	cat cafe-secret.yaml
-	cat cafe-ingress.yaml
-	sudo vi cafe-ingress.yaml ( edit to include the ingressClassName )
-	kubectl apply -f cafe.yaml
-	kubectl apply -f cafe-secret.yaml
-	sudo vi cafe-ingress.yaml
-	kubectl apply -f cafe-ingress.yaml
-	kubectl get svc
-	curl -H "Host: cafe.example.com" https://10.1.1.4:32691/tea --insecure
- 
- #Review NGINX Ingress Controller Default Configuration
- 
+# End of LAB Session 1 #
+## For LAB Session 2: NGINX as Kubernetes Ingress Controller, Pls USE: https://github.com/tareqaminul/oltra-ph-25/tree/main/examples/nic ##
