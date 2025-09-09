@@ -49,6 +49,7 @@
 	sudo nginx -s reload
 
 # LAB-2 - Web Server Configuration
+![NGINX as WS](images/nginx-web-server-architecture.png)
 ## UDF > Components > Nginx-plus-apigw > Access > Web Shell	
 ### Create/Copy files to be served by NGINX Web Server ###
 	cd /opt/services/
