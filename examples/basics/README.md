@@ -196,6 +196,7 @@ In this LAB, we will configure the NGINX to act as an API Gateway for an Httpbin
 
 ## Explore the API Deployment ##
 kubectl config get-contexts
+
 kubectl config use-context rancher2
 
 
