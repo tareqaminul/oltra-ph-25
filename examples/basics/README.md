@@ -112,7 +112,8 @@ server {
 
 
 # LAB-3: Configuring Load Balancer
-![NGINX as LB](/nginx-as-rp.png)
+![NGINX as LB](images/nginx-as-rp.png)
+
 	cd /etc/nginx/conf.d/
 	sudo vi lb.conf
 
