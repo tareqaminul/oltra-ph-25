@@ -203,17 +203,21 @@ In this LAB, we will configure the NGINX to act as an API Gateway for an Httpbin
 
 
 ### Test the API directly ###
-	curl
+	curl http://10.1.20.22:30080/get
 
 ### Configure the NGINX for a simple API Gateway functionality ###
 
 make the config file in NIM. 
 
 ### Test through NGINX ###
-	Curl 
+	curl http://10.1.1.11:8000/get
+
+### Rate Limiting test with no violation ###
+	for i in {1..10}; do   curl -i -s -o /dev/null -w "%{http_code}\n" http://10.1.1.11:8000/get;   sleep 1; done
+
+### Rate Limiting test with violation ###
+	for i in {1..10}; do   curl -i -s -o /dev/null -w "%{http_code}\n" http://10.1.1.11:8000/get;  done
 
 
-
-
-# End of LAB Session 1 #
+## End of LAB Session 1 ##
 ### For LAB Session 2: NGINX as Kubernetes Ingress Controller, Pls USE: https://github.com/tareqaminul/oltra-ph-25/tree/main/examples/nic ###
