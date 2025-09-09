@@ -31,8 +31,13 @@
 # LAB-1: Explore - Review NGINX Plus Default Configuration
 ## UDF > Components > Nginx-plus-apigw > Access > Web Shell
 
-	cd /etc/nginx/
-	cat nginx.conf
+### Exploration Commands ###
+
+	# check running processes status
+ 	ps aux | grep nginx
+ 
+ 	cd /etc/nginx/
+ 	cat nginx.conf
 	cd conf.d/
 	cat default.conf
 	sudo mv default.conf default.conf.bak
