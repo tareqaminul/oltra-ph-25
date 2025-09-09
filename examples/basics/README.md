@@ -119,12 +119,11 @@ server {
 NIM is the awesome NGINX Central Management tool, you can find details here:
 [**NIM**](https://docs.nginx.com/nginx-instance-manager/)
 
-After you are done with exploring the intuitive NIM UI, create the lb.conf in the directory /etc/nginx/conf.d/
-NIM UI > Instance Groups > Click "Add File" and enter the file path and name: 
+After you are done with exploring the intuitive NIM UI, create the lb.conf in the directory /etc/nginx/conf.d/ :
+
+NIM UI > Instance Groups > Click "Add File" and Enter the file path and name: lb.conf 
 ![NIM-add-file](images/nim-oltra-ph-lb-conf-create.png)
 	
- 	#cd /etc/nginx/conf.d/
-	#sudo vi lb.conf
 
 	### lb.conf ###
 	upstream backend_servers {
