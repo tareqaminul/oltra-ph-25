@@ -48,7 +48,7 @@
 	sudo nginx -V
 	sudo nginx -s reload
 
-# LAB-2 - Web Server Configuration
+# LAB-2: Web Server Configuration
 ![NGINX as WS](images/nginx-web-server-architecture.png)
 ## UDF > Components > Nginx-plus-apigw > Access > Web Shell	
 ### Create/Copy files to be served by NGINX Web Server ###
@@ -187,7 +187,7 @@ server {
 ### ###
 
 
-API Gateway
+# LAB-5: Configuring NGINX Plus as an API Gateway
 On "docker_api" Box
 
 	cd /opt/ergast-f1-api/
@@ -269,93 +269,7 @@ Enable Rate Limiting
 	!!;!!;!!;!!;!!;
 
 
-Enable Cache Management
-
-	cd /etc/nginx/conf.d/
-	sudo vi cache.conf
-
-### cache.conf ###
-
-proxy_cache_path /opt/nginx-cache levels=1:2 keys_zone=upstream_cache:20m inactive=5m max_size=2G;
-
-server {	
-	listen 8095;
-	server_name _;
-
-	location / {
-	index index.html;
-	root /opt/services/apple-app;
-
-	}
-}
-
-## You are unable to serve the content and cache content within the same server block
-
-server {
-listen 8092;
-server_name _;
-
-    location / {
-        add_header X-Cache-Status $upstream_cache_status;
-        proxy_cache upstream_cache;
-	proxy_pass http://localhost:8095;
-        proxy_cache_key $scheme$host$request_uri;
-        proxy_cache_valid 5m;
-        add_header X-Test-Header $host;
-    }
-}
-
-### ###
-
-	sudo nginx -t
-	sudo nginx -s reload
-	curl localhost:8092 -v
-	curl localhost:8092 -v
-
-
-Enable Active Health Checks
-
-	cd /etc/nginx/conf.d/
-	sudo vi lb.conf
-	sudo nginx -t
-	sudo nginx -s reload
-
-IP Allow/Deny List with Key Value Store
-
-	cd /etc/nginx/conf.d/
-	sudo vi keyval.conf
-
-### keyval.conf ###
-
-keyval_zone zone=allowlist_zone:1m type=ip state=allowlist_zone.keyval;
-keyval $remote_addr $target zone=allowlist_zone;
-
-
-server {
-
-        listen 8443;
-
-        if ($target) {
-        return 403 "ACCESS DENIED";
-        	}
-
-        location / {
-        return 200 "Welcome - Access Granted!";	
-        }
-}
-
-### ###
-
-	sudo nginx -t
-	sudo nginx -s reload
-	curl -X GET 'http://10.1.1.5:8080/api/6/http/keyvals/allowlist_zone'
-	curl 10.1.1.5:8443
-	curl -X POST -d '{"10.1.1.5":"1"}' -s 'http://localhost:8080/api/6/http/keyvals/allowlist_zone'
-	curl 10.1.1.5:8443
-	curl -X PATCH -d '{"10.1.1.5":"0"}' -s 'http://localhost:8080/api/6/http/keyvals/allowlist_zone'
-	curl 10.1.1.5:8443
-
-
+# OPTIONAL LAB-6: Configuring NGINX App Protect (WAF)
 Install & Configure APP Protect
 
 "Install NAP"
