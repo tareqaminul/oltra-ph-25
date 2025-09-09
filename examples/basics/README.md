@@ -29,7 +29,7 @@
  	nginx -v
 	
 # LAB-1: Explore - Review NGINX Plus Default Configuration
-## Components > Nginx-plus-apigw > Access > Web Shell
+## UDF > Components > Nginx-plus-apigw > Access > Web Shell
 
 	cd /etc/nginx/
 	cat nginx.conf
@@ -43,7 +43,7 @@
 	sudo nginx -s reload
 
 # LAB-2 - Web Server Configuration
-	
+## UDF > Components > Nginx-plus-apigw > Access > Web Shell	
 	cd /opt/services/
 	cd App1/
 	ls
