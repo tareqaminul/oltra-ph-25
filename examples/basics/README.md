@@ -1,4 +1,4 @@
-#Install NGINX Plus - SKIP - DONE Already!!!
+# (Install NGINX Plus) SKIP - DONE Already!!!
 	
 	sudo mkdir -p /etc/ssl/nginx
  	sudo cp <downloaded-file-name>.crt /etc/ssl/nginx/nginx-repo.crt
@@ -33,14 +33,15 @@
 
 ### Exploration Commands ###
 
-	# check running processes status
+	# Check running processes status
  	ps aux | grep nginx
- 
+
+  	# Check NGINX Deployment
  	cd /etc/nginx/
  	cat nginx.conf
 	cd conf.d/
 	cat default.conf
-	sudo mv default.conf default.conf.bak
+	sudo mv default.conf default.conf.bak #ignore if not present
 	sudo nginx -t
 	sudo nginx -T
 	sudo nginx -v
@@ -49,6 +50,7 @@
 
 # LAB-2 - Web Server Configuration
 ## UDF > Components > Nginx-plus-apigw > Access > Web Shell	
+### Create/Copy files to be served by NGINX Web Server
 	cd /opt/services/
 	cd App1/
 	ls
