@@ -29,6 +29,7 @@
  	nginx -v
 	
 # LAB-1: Explore - Review NGINX Plus Default Configuration
+## Components > Nginx-plus-apigw > Access > Web Shell
 
 	cd /etc/nginx/
 	cat nginx.conf
