@@ -50,7 +50,7 @@
 
 # LAB-2 - Web Server Configuration
 ## UDF > Components > Nginx-plus-apigw > Access > Web Shell	
-### Create/Copy files to be served by NGINX Web Server
+### Create/Copy files to be served by NGINX Web Server ###
 	cd /opt/services/
 	cd App1/
 	ls
@@ -58,6 +58,20 @@
 	cd /etc/nginx/conf.d/
 	sudo vi web.conf
 
+ 	cd /opt/services/
+	cd App2/
+	ls
+	cat index.html
+	cd /etc/nginx/conf.d/
+	sudo vi web.conf
+
+	cd /opt/services/
+	cd App3/
+	ls
+	cat index.html
+	cd /etc/nginx/conf.d/
+	sudo vi web.conf
+ 
 ### web.conf ###
 server {
     
