@@ -293,11 +293,13 @@ In this section, you explore and learn about various Nginx and Linux commands us
 	sudo vi web.conf
  
 ### web.conf ###
+Copy the file 02-webserver.conf to /etc/nginx/conf.d/02-webserver.conf
+or
 Copy/paste the Nginx config provided below within this new `02-webserver.conf` config file:
 
 ```nginx
 
- 	server {
+server {
     
     listen       9001;
     index  index.html;
@@ -357,7 +359,7 @@ After you are done with exploring the intuitive NIM UI, create the lb.conf in th
 NIM UI > Instance Groups > Click "Add File" and Enter the file path and name: lb.conf 
 ![NIM-add-file](images/nim-oltra-ph-lb-conf-create.png)
 	
-
+```nginx
 	### lb.conf ###
 	upstream backend_servers {
     zone backend_server_zone 64k;
@@ -381,6 +383,7 @@ NIM UI > Instance Groups > Click "Add File" and Enter the file path and name: lb
 
     }
 }
+```
 
 ### Test Load Balancer ###
 
