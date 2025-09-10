@@ -274,21 +274,21 @@ In this section, you explore and learn about various Nginx and Linux commands us
 Index.html files are available in the respository working directory. Create 3 Index.html files in App1, App2 and App3 directories in /opt/services as follows:
 
 	cd /opt/services/
-	cd App1/
+	cd app1/
 	ls
 	cat index.html
 	cd /etc/nginx/conf.d/
 	sudo vi web.conf
 
  	cd /opt/services/
-	cd App2/
+	cd app2/
 	ls
 	cat index.html
 	cd /etc/nginx/conf.d/
 	sudo vi web.conf
 
 	cd /opt/services/
-	cd App3/
+	cd app3/
 	ls
 	cat index.html
 	cd /etc/nginx/conf.d/
@@ -342,11 +342,18 @@ server {
 	curl 10.1.1.11:9002
 	curl 10.1.1.11:9003
 
+
 For graphical view, please use the Firefox Browser available in UDF > Docker > FIREFOX
 ![UDF-Firefox](images/firefox-udf.png)
 
+
 Access the RED App1 using NGINX listener IP and Port: 10.1.1.11:9001
 ![UDF-Firefox](images/firefox-app-1-red.png)
+
+
+Similarly:
+Access the (GREEN) App2 using NGINX listener IP and Port: 10.1.1.11:9002
+Access the (BLUE) App3 using NGINX listener IP and Port: 10.1.1.11:9003
 
 # LAB-3: Configuring Load Balancer
 ![NGINX as LB](images/nginx-as-rp.png)
