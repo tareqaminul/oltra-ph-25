@@ -76,7 +76,6 @@ NGINX Plus is the `Commercial version of NGINX`, with additional Enterprise feat
  	nginx -v
 	
 # LAB-1: Explore - Review NGINX Plus Default Configuration
-## UDF > Components > Nginx-plus-apigw > Access > Web Shell
 
 In this section, you explore and learn about various Nginx and Linux commands used to configure Nginx and see what is happening in the Linux system. Pls find the Web Shell at UDF > Components > Nginx-plus-apigw > Access > WEB SHELL
 
