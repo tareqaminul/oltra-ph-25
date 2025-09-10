@@ -453,7 +453,7 @@ In this LAB, we will configure the NGINX as an API Gateway for an Httpbin API. H
 
 ![find-vscode-terminal](images/vscode-terminal.png)
 
-## [OPTIONAL] Explore the API Deployment ##
+### [OPTIONAL] Explore the API Deployment ###
 The test API called HTTPBIN is deployed in the default namespace in Rancher Kubernetes Cluster "rancher2" and your kubectl client can be pointing to other clusters! So let us check and fix, if necessary!
 
 ### Check current Context ###
@@ -468,7 +468,7 @@ The test API called HTTPBIN is deployed in the default namespace in Rancher Kube
   	kubectl get services
 
 
-### Test the API directly ###
+## Test the API directly ##
 	curl http://10.1.20.22:30080/get
 
 ### Configure the NGINX for a simple API Gateway functionality ###
