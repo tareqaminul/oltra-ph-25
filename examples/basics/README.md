@@ -476,7 +476,7 @@ The test API called HTTPBIN is deployed in the default namespace in Rancher Kube
 Copy the [httpbin-ngx.conf](httpbin/httpbin-ngx.conf) to the Nginx instance named "Nginx-plus-apigw" in the UDF. 
 You can use Nginx-plus-apigw > ACCESS > WEB SHELL and create the file in /etc/nginx/conf.d/httpbin-ngx.conf OR alternatively, you can use NIM and follow the process like you did for Load Balancer configuration, above. 
 
-Before configuring, let us examine the simple API Gateway configuration file.
+Before configuring, let us examine the simple API Gateway configuration file. Note that, the upstream block includes the 3 Color Apps as backend servers listening at Ports 9001, 9002 and 9003, while an NGINX Server is configured to listen at port 9000 and proxy pass to the backend pool. 
 
 ### Test through NGINX ###
 	curl http://10.1.1.11:8000/get
