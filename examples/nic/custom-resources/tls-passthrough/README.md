@@ -49,7 +49,7 @@ k get pods -n nginx
 
 Change the working directory to `TransportServer`.
 ```
-cd ~/oltra/use-cases/nic-examples/custom-resources/tls-passthrough
+cd ~/oltra/examples/nic/custom-resources/tls-passthrough
 ```
 
 Create the namespace `tls-passthrough`:
