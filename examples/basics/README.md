@@ -78,6 +78,8 @@ NGINX Plus is the `Commercial version of NGINX`, with additional Enterprise feat
 # LAB-1: Explore - Review NGINX Plus Default Configuration
 ## UDF > Components > Nginx-plus-apigw > Access > Web Shell
 
+In this section, you explore and learn about various Nginx and Linux commands used to configure Nginx and see what is happening in the Linux system.
+
 ### Exploration Commands ###
 
 	# Check running processes status
@@ -96,6 +98,180 @@ NGINX Plus is the `Commercial version of NGINX`, with additional Enterprise feat
 	sudo nginx -v
 	sudo nginx -V
 	sudo nginx -s reload
+### Sample Outputs ###
+<br/>
+
+1. Run some commands inside the NGINX Plus Container:
+
+    ```bash
+    # Check NGINX help page
+    nginx -h
+    ```
+
+    ```bash
+    ##Sample Output##
+    nginx version: nginx/1.27.4 (nginx-plus-r34-p1)
+    Usage: nginx [-?hvVtTq] [-s signal] [-p prefix]
+             [-e filename] [-c filename] [-g directives]
+
+    Options:
+      -?,-h         : this help
+      -v            : show version and exit
+      -V            : show version and configure options then exit
+      -t            : test configuration and exit
+      -T            : test configuration, dump it and exit
+      -d            : dancing help not available to you
+      -q            : suppress non-error messages during configuration testing
+      -s signal     : send signal to a master process: stop, quit, reopen, reload
+      -p prefix     : set prefix path (default: /etc/nginx/)
+      -e filename   : set error log file (default: /var/log/nginx/error.log)
+      -c filename   : set configuration file (default: /etc/nginx/nginx.conf)
+      -g directives : set global directives out of configuration file
+
+    ```
+
+    ```bash
+    # What version of Nginx is running:
+    nginx -v
+    ```
+
+    ```bash
+    ##Sample Output##
+    nginx version: nginx/1.27.4 (nginx-plus-r34-p1)  # Notice the "-plus-rXX" label
+
+    ```
+
+    ```bash
+    # List all modules and config settings of NGINX Plus:
+    nginx -V
+    ```
+
+    ```bash
+    ##Sample Output##
+    nginx version: nginx/1.27.4 (nginx-plus-r34-p1)
+    built by gcc 12.2.0 (Debian 12.2.0-14+deb12u1) 
+    built with OpenSSL 3.0.16 11 Feb 2025           # notice the OpenSSL version
+    TLS SNI support enabled
+    configure arguments: --prefix=/etc/nginx --sbin-path=/usr/sbin/nginx --modules-path=/usr/lib/nginx/modules --conf-path=/etc/nginx/nginx.conf --error-log-path=/var/log/nginx/error.log --http-log-path=/var/log/nginx/access.log --pid-path=/var/run/nginx.pid --lock-path=/var/run/nginx.lock --http-client-body-temp-path=/var/cache/nginx/client_temp --http-proxy-temp-path=/var/cache/nginx/proxy_temp --http-fastcgi-temp-path=/var/cache/nginx/fastcgi_temp --http-uwsgi-temp-path=/var/cache/nginx/uwsgi_temp --http-scgi-temp-path=/var/cache/nginx/scgi_temp --user=nginx --group=nginx --with-compat --with-file-aio --with-threads --with-http_addition_module --with-http_auth_request_module --with-http_dav_module --with-http_flv_module --with-http_gunzip_module --with-http_gzip_static_module --with-http_mp4_module --with-http_random_index_module --with-http_realip_module --with-http_secure_link_module --with-http_slice_module --with-http_ssl_module --with-http_stub_status_module --with-http_sub_module --with-http_v2_module --with-http_v3_module --with-mail --with-mail_ssl_module --with-stream --with-stream_realip_module --with-stream_ssl_module --with-stream_ssl_preread_module --build=nginx-plus-r34-p1 --state-path=/var/lib/nginx/state --with-http_auth_jwt_module --with-http_f4f_module --with-http_hls_module --with-http_oidc_module --with-http_proxy_protocol_vendor_module --with-http_session_log_module --with-mgmt --with-stream_mqtt_filter_module --with-stream_mqtt_preread_module --with-stream_proxy_protocol_vendor_module --system-ca-bundle=/etc/ssl/certs/ca-certificates.crt --with-cc-opt='-g -O2 -ffile-prefix-map=/home/builder/debuild/nginx-plus-1.27.4/debian/debuild-base/nginx-plus-1.27.4=. -fstack-protector-strong -Wformat -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fPIC' --with-ld-opt='-Wl,-z,relro -Wl,-z,now -Wl,--as-needed -pie'
+
+    ```
+
+    ```bash
+     dpkg -s nginx-plus
+    ```
+
+    ```bash
+    ##Sample Output##
+    Package: nginx-plus
+    Status: install ok installed
+    Priority: optional
+    Section: httpd
+    Installed-Size: 5173
+    Maintainer: NGINX Packaging <nginx-packaging@f5.com>
+    Architecture: arm64
+    Version: 34-2~bookworm
+    Replaces: nginx, nginx-core, nginx-plus-debug
+    Provides: httpd, nginx, nginx-plus-r34
+    Depends: libc6 (>= 2.34), libcrypt1 (>= 1:4.1.0), libpcre2-8-0 (>= 10.22), libssl3 (>= 3.0.0), zlib1g (>= 1:1.1.4), lsb-base (>= 3.0-6), ca-certificates
+    Recommends: logrotate
+    Conflicts: nginx, nginx-common, nginx-core
+    Conffiles:
+    /etc/init.d/nginx 0b8cb35c30e187ff9bdfd5d9e7d79631
+    /etc/init.d/nginx-debug ed610161bfa49f021f5afa483a10eac5
+    /etc/logrotate.d/nginx a4da44b03e39926b999329061770362b
+    /etc/nginx/conf.d/default.conf 5e054c6c3b2901f98e0d720276c3b20c
+    /etc/nginx/fastcgi_params 4729c30112ca3071f4650479707993ad
+    /etc/nginx/mime.types 754582375e90b09edaa6d3dbd657b3cf
+    /etc/nginx/nginx.conf e7b0272ab0408de48c8440432787ba7b
+    /etc/nginx/scgi_params df8c71e25e0356ffc539742f08fddfff
+    /etc/nginx/uwsgi_params 88ac833ee8ea60904a8b3063fde791de
+    Description: NGINX Plus, provided by Nginx, Inc.
+    NGINX Plus extends NGINX open source to create an enterprise-grade
+    Application Delivery Controller, Accelerator and Web Server. Enhanced
+    features include: Layer 4 and Layer 7 load balancing with health checks,
+    session persistence and on-the-fly configuration; Improved content caching;
+    Enhanced status and monitoring information; Streaming media delivery.
+    Homepage: https://www.nginx.com/
+
+    ```
+
+    ```bash
+    # What nginx processes are running?
+    ps aux |grep nginx
+    ```
+
+    ```bash
+    ##Sample Output##
+   root        31  0.1  0.1  12608  9108 ?        S    22:24   0:00 nginx: master process /usr/sbin/nginx -g daemon off;
+    nginx       32  0.0  0.1  86996  8296 ?        S    22:24   0:00 nginx: worker process
+    root        41  0.0  0.0   3080  1356 pts/0    S+   22:25   0:00 grep nginx
+
+    ```
+
+    ```bash
+    # Which TCP Ports are being used by NGINX ?
+    netstat -alpn
+    ```
+
+    ```bash
+    ##Sample output##
+    Active Internet connections (servers and established)
+    Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+    tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN      31/nginx: master pr 
+    tcp        0      0 127.0.0.11:46387        0.0.0.0:*               LISTEN      -                   
+    udp        0      0 127.0.0.11:47095        0.0.0.0:*                           -                   
+    Active UNIX domain sockets (servers and established)
+    Proto RefCnt Flags       Type       State         I-Node   PID/Program name     Path
+    unix  3      [ ]         STREAM     CONNECTED     27341    31/nginx: master pr  
+    unix  3      [ ]         STREAM     CONNECTED     27342    31/nginx: master pr  
+    unix  2      [ ACC ]     STREAM     LISTENING     35714    1/python3            /var/run/supervisor.sock.1
+
+    ```
+
+    ```bash
+    # Look around the nginx configuration folders
+    ls -l /etc/nginx
+
+    ls -l /etc/nginx/conf.d
+    ```
+
+    ```bash
+    # Test the current NGINX configuration
+    nginx -t
+    ```
+
+    ```bash
+    ##Sample Output##
+    nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+    nginx: configuration file /etc/nginx/nginx.conf test is successful
+
+    ```
+
+    ```bash
+    # Reload Nginx - checks your new config and reloads Nginx
+    nginx -s reload
+    ```
+
+    ```bash
+    # Display the entire NGINX configuration, includes all files
+    nginx -T
+    ```
+
+    ```bash
+    # Check the Nginx access log
+    cat /var/log/nginx/access.log
+
+    ```
+
+    ```bash
+    # Check the Nginx error log
+    cat /var/log/nginx/error.log
+
+    ```
+
+<br/>
+
+
 
 # LAB-2: Web Server Configuration
 ![NGINX as WS](images/nginx-web-server-architecture.png)
