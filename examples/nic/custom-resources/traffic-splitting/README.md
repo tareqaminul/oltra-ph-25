@@ -10,7 +10,7 @@ Use the terminal on VS Code. VS Code is under the `Client` on the `Access` drop-
 
 Change the working directory to `traffic-splitting`.
 ```
-cd ~/oltra/use-cases/nic-examples/custom-resources/traffic-splitting
+cd ~/oltra/examples/nic/custom-resources/traffic-splitting
 ```
 
 ## Step 1 - Deploy the Cafe Application
