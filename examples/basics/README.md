@@ -269,8 +269,10 @@ In this section, you explore and learn about various Nginx and Linux commands us
 
 # LAB-2: Web Server Configuration
 ![NGINX as WS](images/nginx-web-server-architecture.png)
-## UDF > Components > Nginx-plus-apigw > Access > Web Shell	
+### UDF > Components > Nginx-plus-apigw > Access > Web Shell	
 ### Create/Copy files to be served by NGINX Web Server ###
+Index.html files are available in the respository working directory. Create 3 Index.html files in App1, App2 and App3 directories in /opt/services as follows:
+
 	cd /opt/services/
 	cd App1/
 	ls
@@ -332,7 +334,7 @@ server {
 }
 
 ```
-### ###
+### Test Web Server Configuration ###
 
 	sudo nginx -t
 	sudo nginx -s reload
