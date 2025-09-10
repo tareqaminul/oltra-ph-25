@@ -97,9 +97,9 @@ In this section, you explore and learn about various Nginx and Linux commands us
 	sudo nginx -v
 	sudo nginx -V
 	sudo nginx -s reload
-
-### Sample Outputs ###
 <br/>
+### Sample Outputs ###
+
 1. Run some commands inside the NGINX Plus Container:
 
     ```bash
