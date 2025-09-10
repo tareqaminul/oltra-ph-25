@@ -378,7 +378,7 @@ NIM UI > Instance Groups > Click "Add File" and Enter the file path and name: lb
 ![NIM-add-file](images/nim-oltra-ph-lb-conf-create.png)
 	
 ```nginx
-		### lb.conf ###
+### lb.conf ###
 upstream backend_servers {
     	zone backend_server_zone 64k;
     	server 127.0.0.1:9001;
@@ -415,7 +415,7 @@ server {
 # LAB-4: Configuring NGINX Plus Dashboard
 
 ### dashboard.conf ###
-
+```nginx
 server {
 
     listen       8080;
@@ -430,6 +430,8 @@ server {
     index   dashboard.html;
     }
 }
+
+```
 
 ### ###
 
