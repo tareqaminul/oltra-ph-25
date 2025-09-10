@@ -418,6 +418,8 @@ Access the Load Balancer using NGINX listener IP and Port: 10.1.1.11:9000
 
 Refresh the browser to few times to test the load balancing action. 
 
+### This ends the simple Load Balancer LAB! ###
+
 
 # LAB-4: Configuring NGINX Plus Dashboard
 
