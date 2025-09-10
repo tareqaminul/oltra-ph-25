@@ -293,8 +293,10 @@ In this section, you explore and learn about various Nginx and Linux commands us
 	sudo vi web.conf
  
 ### web.conf ###
-Copy the file 02-webserver.conf to /etc/nginx/conf.d/02-webserver.conf
+Copy the contents of file 02-webserver.conf and create /etc/nginx/conf.d/02-webserver.conf
+
 or
+
 Copy/paste the Nginx config provided below within this new `02-webserver.conf` config file:
 
 ```nginx
