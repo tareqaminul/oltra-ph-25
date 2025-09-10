@@ -352,7 +352,9 @@ Access the RED App1 using NGINX listener IP and Port: 10.1.1.11:9001
 
 
 Similarly:
+
 Access the (GREEN) App2 using NGINX listener IP and Port: 10.1.1.11:9002
+
 Access the (BLUE) App3 using NGINX listener IP and Port: 10.1.1.11:9003
 
 # LAB-3: Configuring Load Balancer
@@ -376,14 +378,14 @@ NIM UI > Instance Groups > Click "Add File" and Enter the file path and name: lb
 ![NIM-add-file](images/nim-oltra-ph-lb-conf-create.png)
 	
 ```nginx
-	### lb.conf ###
-	upstream backend_servers {
-    zone backend_server_zone 64k;
-    server 127.0.0.1:9001;
-    server 127.0.0.1:9002;
-	}
+		### lb.conf ###
+upstream backend_servers {
+    	zone backend_server_zone 64k;
+    	server 127.0.0.1:9001;
+    	server 127.0.0.1:9002;
+}
 
-	server {
+server {
     listen 9000;
     autoindex on;
 
