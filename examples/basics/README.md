@@ -423,7 +423,7 @@ Access the Load Balancer using NGINX listener IP and Port: 10.1.1.11:9000
 
 Refresh the browser to few times to test the load balancing action. 
 
-
+<span style="color:red">EXERCISE</span>
 ### EXERCISE: You find there are only 2 COLOR Apps - RED and GREEN. Can you add the BLUE App? ### 
 
 
