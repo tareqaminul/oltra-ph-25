@@ -10,7 +10,7 @@ Use the terminal on VS Code. VS Code is under the `Client` on the `Access` drop-
 
 Change the working directory to `app-protect-dos`.
 ```
-cd ~/oltra/use-cases/nic-examples/ingress-resources/app-protect-dos
+cd ~/oltra/examples/nic/ingress-resources/app-protect-dos
 ```
 
 ## 2. Deploy the Webapp Application
