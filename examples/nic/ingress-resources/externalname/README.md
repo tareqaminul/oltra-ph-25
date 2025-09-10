@@ -29,7 +29,7 @@ Use the terminal on VS Code. VS Code is under the `Client` on the `Access` drop-
 
 Change the working directory to `externalname`.
 ```
-cd ~/oltra/use-cases/nic-examples/ingress-resources/externalname
+cd ~/oltra/examples/nic/ingress-resources/externalname
 ```
 
 ## 1. Create the service
