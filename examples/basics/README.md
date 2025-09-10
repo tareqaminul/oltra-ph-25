@@ -295,9 +295,9 @@ In this section, you explore and learn about various Nginx and Linux commands us
 ### web.conf ###
 Copy/paste the Nginx config provided below within this new `02-webserver.conf` config file:
 
-    ```nginx
+```nginx
 
- server {
+ 	server {
     
     listen       9001;
     index  index.html;
@@ -327,7 +327,7 @@ server {
     }
 }
 
-    ```
+```
 ### ###
 
 	sudo nginx -t
