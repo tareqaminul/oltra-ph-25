@@ -377,7 +377,7 @@ After you are done with exploring the intuitive NIM UI, create the lb.conf in th
 NIM UI > Instance Groups > Click "Add File" and Enter the file path and name: lb.conf 
 ![NIM-add-file](images/nim-oltra-ph-lb-conf-create.png)
 
-Note that, the upstream block includes the 3 Color Apps as backend servers listening at Ports 9001, 9002 and 9003, while an NGINX Server is configured to listen at port 9000 and proxy pass to the backend pool. 
+Note that, the upstream block includes the 2 Color Apps as backend servers listening at Ports 9001, 9002 while an NGINX Server is configured to listen at port 9000 and proxy pass to the backend pool. 
 	
 ```nginx
 ### lb.conf ###
@@ -412,6 +412,9 @@ server {
 	curl localhost:9000
 	curl localhost:9000
 	curl localhost:9000
+ 	curl localhost:9000
+
+### EXERCISE: You find there are only 2 COLOR Apps - RED and GREEN. Can you add the BLUE App? ### 
 
 For graphical view, please use the Firefox Browser available in UDF > Docker > FIREFOX
 
