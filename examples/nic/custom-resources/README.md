@@ -1,0 +1,1 @@
+For details about the NGINX Custome Resource Definitions (CRDs) VirtualServer and VirtualServerRoute, please visit the F5 NGINX Official Documentation: at [VirtualServer](https://docs.nginx.com/nginx-ingress-controller/configuration/virtualserver-and-virtualserverroute-resources/)
