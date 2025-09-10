@@ -293,7 +293,7 @@ In this section, you explore and learn about various Nginx and Linux commands us
 	sudo vi web.conf
  
 ### web.conf ###
-server {
+	server {
     
     listen       9001;
     index  index.html;
@@ -301,9 +301,9 @@ server {
     location / {
     root   /opt/services/App1;
     }
-}
+	}
 
-server {
+	server {
     
     listen       9002;
     index  index.html;
@@ -311,9 +311,9 @@ server {
     location / {
     root   /opt/services/App2;
     }
-}
+	}
 
-server {
+	server {
     
     listen       9003;
     index  index.html;
@@ -321,7 +321,7 @@ server {
     location / {
     root   /opt/services/App3;
     }
-}
+	}
 ### ###
 
 	sudo nginx -t
