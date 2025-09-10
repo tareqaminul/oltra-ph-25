@@ -8,7 +8,7 @@ Use the terminal on VS Code. VS Code is under the `Client` on the `Access` drop-
 
 Change the working directory to `ingress-mtls`.
 ```
-cd ~/oltra/use-cases/nic-examples/custom-resources/jwt
+cd ~/oltra/examples/nic/custom-resources/jwt
 ```
 
 ## Step 1 - Deploy a Web Application
