@@ -342,6 +342,11 @@ server {
 	curl 10.1.1.11:9002
 	curl 10.1.1.11:9003
 
+For graphical view, please use the Firefox Browser available in UDF > Docker > FIREFOX
+![UDF-Firefox](images/firefox-udf.png)
+
+Access the RED App1 using NGINX listener IP and Port: 10.1.1.11:9001
+![UDF-Firefox](images/firefox-app-1-red.png)
 
 # LAB-3: Configuring Load Balancer
 ![NGINX as LB](images/nginx-as-rp.png)
