@@ -8,7 +8,7 @@ Use the terminal on VS Code. VS Code is under the `Client` on the `Access` drop-
 
 Change the working directory to `path-based`.
 ```
-cd ~/oltra/use-cases/nic-examples/ingress-resources/path-based
+cd ~/oltra/examples/nic/ingress-resources/path-based
 ```
 
 ## 1. Deploy the Cafe Application
