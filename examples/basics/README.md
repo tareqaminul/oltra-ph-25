@@ -293,35 +293,37 @@ In this section, you explore and learn about various Nginx and Linux commands us
 	sudo vi web.conf
  
 ### web.conf ###
-	server {
+'''
+server {
     
     listen       9001;
     index  index.html;
    
     location / {
-    root   /opt/services/App1;
+    root   /opt/services/app1;
     }
-	}
+}
 
-	server {
+server {
     
     listen       9002;
     index  index.html;
 
     location / {
-    root   /opt/services/App2;
+    root   /opt/services/app2;
     }
-	}
+}
 
-	server {
+server {
     
     listen       9003;
     index  index.html;
 
     location / {
-    root   /opt/services/App3;
+    root   /opt/services/app3;
     }
-	}
+}
+'''
 ### ###
 
 	sudo nginx -t
