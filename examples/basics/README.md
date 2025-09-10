@@ -229,39 +229,39 @@ In this section, you explore and learn about various Nginx and Linux commands us
     ls -l /etc/nginx/conf.d
 ```
 
-    ```bash
+```bash
     # Test the current NGINX configuration
     nginx -t
-    ```
+```
 
-    ```bash
+```bash
     ##Sample Output##
     nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
     nginx: configuration file /etc/nginx/nginx.conf test is successful
 
-    ```
+```
 
-    ```bash
+```bash
     # Reload Nginx - checks your new config and reloads Nginx
     nginx -s reload
-    ```
+```
 
-    ```bash
+```bash
     # Display the entire NGINX configuration, includes all files
     nginx -T
-    ```
+```
 
-    ```bash
+```bash
     # Check the Nginx access log
     cat /var/log/nginx/access.log
 
-    ```
+```
 
-    ```bash
+```bash
     # Check the Nginx error log
     cat /var/log/nginx/error.log
 
-    ```
+```
 
 <br/>
 
