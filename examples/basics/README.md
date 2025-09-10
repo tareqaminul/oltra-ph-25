@@ -78,8 +78,8 @@ NGINX Plus is the `Commercial version of NGINX`, with additional Enterprise feat
 # LAB-1: Explore - Review NGINX Plus Default Configuration
 
 In this section, you explore and learn about various Nginx and Linux commands used to configure Nginx and see what is happening in the Linux system. Pls find the Web Shell at UDF > Components > Nginx-plus-apigw > Access > WEB SHELL
-Run some commands inside the NGINX Plus on Ubuntu system
-### Exploration Commands' List ###
+
+### Run some commands inside the NGINX Plus on the Ubuntu system ###
 
 	# Check running processes status
  	ps aux | grep nginx
