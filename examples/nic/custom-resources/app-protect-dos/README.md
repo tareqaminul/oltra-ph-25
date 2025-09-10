@@ -8,7 +8,7 @@ Use the terminal on VS Code. VS Code is under the `Client` on the `Access` drop-
 
 Change the working directory to `app-protect-dos`.
 ```
-cd ~/oltra/use-cases/nic-examples/custom-resources/app-protect-dos
+cd ~/oltra/examples/nic/custom-resources/app-protect-dos
 ```
 
 ## Step 1. Deploy a Web Application
