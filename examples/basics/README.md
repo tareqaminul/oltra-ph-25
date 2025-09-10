@@ -212,8 +212,11 @@ In this LAB, we will configure the NGINX as an API Gateway for an Httpbin API. H
 ### Configure the NGINX for a simple API Gateway functionality ###
 
 # make the config file in NIM. #
-Copy the [httpbin-ngx.conf](httpbin/httpbin-ngx.conf) to the Nginx instance named "Nginx-plus-apigw" in the UDF. You can use Nginx-plus-apigw > ACCESS > WEB SHELL and create the file in /etc/nginx/conf.d/httpbin-ngx.conf OR alternatively, you can use NIM and follow the process like you did for Load Balancer configuration, above. 
 
+Copy the [httpbin-ngx.conf](httpbin/httpbin-ngx.conf) to the Nginx instance named "Nginx-plus-apigw" in the UDF. 
+You can use Nginx-plus-apigw > ACCESS > WEB SHELL and create the file in /etc/nginx/conf.d/httpbin-ngx.conf OR alternatively, you can use NIM and follow the process like you did for Load Balancer configuration, above. 
+
+Before configuring, let us examine the simple API Gateway configuration file. 
 
 ### Test through NGINX ###
 	curl http://10.1.1.11:8000/get
