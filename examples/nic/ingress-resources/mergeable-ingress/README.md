@@ -65,7 +65,7 @@ Use the terminal on VS Code. VS Code is under the `Client` on the `Access` drop-
 
 Change the working directory to `mergeable-ingress-types`.
 ```
-cd ~/oltra/use-cases/nic-examples/ingress-resources/mergeable-ingress
+cd ~/oltra/examples/nic/ingress-resources/mergeable-ingress
 ```
 
 ## 1. Deploy the Cafe Application
