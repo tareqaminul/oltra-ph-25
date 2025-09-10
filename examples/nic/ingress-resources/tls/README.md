@@ -8,7 +8,7 @@ Use the terminal on VS Code. VS Code is under the `Client` on the `Access` drop-
 
 Change the working directory to `complete-example`.
 ```
-cd ~/oltra/use-cases/nic-examples/ingress-resources/tls
+cd ~/oltra/examples/nic/ingress-resources/tls
 ```
 
 ## 1. Deploy the Cafe Application
