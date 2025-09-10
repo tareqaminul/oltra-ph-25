@@ -414,7 +414,7 @@ server {
 	curl localhost:9000
  	curl localhost:9000
 
-### EXERCISE: You find there are only 2 COLOR Apps - RED and GREEN. Can you add the BLUE App? ### 
+
 
 For graphical view, please use the Firefox Browser available in UDF > Docker > FIREFOX
 
@@ -423,7 +423,12 @@ Access the Load Balancer using NGINX listener IP and Port: 10.1.1.11:9000
 
 Refresh the browser to few times to test the load balancing action. 
 
+
+### EXERCISE: You find there are only 2 COLOR Apps - RED and GREEN. Can you add the BLUE App? ### 
+
+
 ### This ends the simple Load Balancer LAB! ###
+
 
 
 # LAB-4: Configuring NGINX Plus Dashboard
