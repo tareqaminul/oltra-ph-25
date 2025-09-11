@@ -271,7 +271,8 @@ In this section, you explore and learn about various Nginx and Linux commands us
 ![NGINX as WS](images/nginx-web-server-architecture.png)
 ### UDF > Components > Nginx-plus-apigw > Access > Web Shell	
 
-At first, let's disable previous configurations by renaming. E.g.,
+At first, let's disable previous configuration files available in /etc/nginx/conf.d directory, by renaming. E.g.,
+
 ```bash	
 	cd /etc/nginx/conf.d
 ```
