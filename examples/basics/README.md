@@ -273,7 +273,7 @@ In this section, you explore and learn about various Nginx and Linux commands us
 
 At first, let's disable previous configurations by renaming. E.g.,
 ```bash	
-	cd /etc/nginx/conf
+	cd /etc/nginx/conf.d
 ```
 
 ```bash
