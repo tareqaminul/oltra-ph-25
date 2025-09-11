@@ -272,14 +272,15 @@ In this section, you explore and learn about various Nginx and Linux commands us
 ### UDF > Components > Nginx-plus-apigw > Access > Web Shell	
 
 At first, let's disable previous configurations by renaming. E.g.,
+```bash	
+	cd /etc/nginx/conf
+```
 
 ```bash
 for f in *.conf; do
     mv -- "$f" "$f.bak"
 done
 ```
-
-mv *.conf *.conf.bak
 
 
 ### Create/Copy files to be served by NGINX Web Server ###
