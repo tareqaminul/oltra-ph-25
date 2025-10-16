@@ -38,3 +38,11 @@ done | sort | uniq -c
 ```bash
 curl -s http://10.1.1.11:8080/api/6/ | jq .
 ```
+### b. List all upstreams
+```bash
+curl -s http://10.1.1.11:8080/api/6/http/upstreams/ | jq .
+```
+### c. Inspect the blue-green upstream
+```bash
+curl -s http://10.1.1.11:8080/api/6/http/upstreams/bluegreen_bullet/servers/ | jq .
+```
