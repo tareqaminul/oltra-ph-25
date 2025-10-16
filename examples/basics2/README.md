@@ -1,7 +1,6 @@
 # 🧪 NGINX Plus Blue-Green-Red Deployment Test Guide
 
-This guide verifies that the Blue/Green/Red setup on **NGINX Plus** at  
-`http://10.1.1.11` works correctly — including traffic routing by HTTP header  
+This guide verifies that the Blue/Green/Red setup on **NGINX Plus** at works correctly — including traffic routing by HTTP header  
 and dynamic weighted rollout using the NGINX Plus API.
 
 ---
