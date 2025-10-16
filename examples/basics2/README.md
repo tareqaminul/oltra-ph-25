@@ -22,3 +22,19 @@ and dynamic weighted rollout using the NGINX Plus API.
 
 ```bash
 curl -i http://10.1.1.11/
+
+curl -i -H "User: bluegroup" http://10.1.1.11/
+
+curl -i -H "User: bluegreen" http://10.1.1.11/
+
+for i in {1..100}; do
+  curl -s -o /dev/null -w "%{remote_ip}\n" -H "User: bluegreen" http://10.1.1.11/
+done | sort | uniq -c
+```
+
+## 🧭 2.Testing the NGINX Plus API
+
+### a. Check API root
+```bash
+curl -s http://10.1.1.11:8080/api/6/ | jq .
+```
