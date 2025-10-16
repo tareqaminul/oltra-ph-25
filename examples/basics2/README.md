@@ -46,3 +46,35 @@ curl -s http://10.1.1.11:8080/api/6/http/upstreams/ | jq .
 ```bash
 curl -s http://10.1.1.11:8080/api/6/http/upstreams/bluegreen_bullet/servers/ | jq .
 ```
+## 🚀 3. Gradual Rollout (Dynamic Weighted Promotion)
+You can shift live traffic share from blue → green using the API, without reloading NGINX Plus!
+
+### Example: move to 50/50 split
+```bash
+curl -X PATCH -d '{"weight":50}' http://10.1.1.11:8080/api/6/http/upstreams/bluegreen_bullet/servers/0
+curl -X PATCH -d '{"weight":50}' http://10.1.1.11:8080/api/6/http/upstreams/bluegreen_bullet/servers/1
+```
+### Example: promote green to 100%
+```bash
+curl -X PATCH -d '{"weight":0}'  http://10.1.1.11:8080/api/6/http/upstreams/bluegreen_bullet/servers/0
+curl -X PATCH -d '{"weight":100}' http://10.1.1.11:8080/api/6/http/upstreams/bluegreen_bullet/servers/1
+```
+### Verify updated weights
+```bash
+curl -s http://10.1.1.11:8080/api/6/http/upstreams/bluegreen_bullet/servers/ | jq '.[] | {server,weight}'
+```
+## 🔄 4. Rollback Procedure (Instant Recovery)
+```bash
+curl -X PATCH -d '{"weight":95}' http://10.1.1.11:8080/api/6/http/upstreams/bluegreen_bullet/servers/0
+curl -X PATCH -d '{"weight":5}'  http://10.1.1.11:8080/api/6/http/upstreams/bluegreen_bullet/servers/1
+```
+### Confirm:
+```bash
+curl -s http://10.1.1.11:8080/api/6/http/upstreams/bluegreen_bullet/servers/ | jq '.[] | {server,weight}'
+```
+## 🩺 5. Health Check and Observability
+### Check NGINX Plus active health and runtime stats:
+```bash
+curl -s http://10.1.1.11:8080/api/6/http/upstreams/bluegreen_bullet | jq .
+```
+
