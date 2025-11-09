@@ -139,6 +139,8 @@ In this section, you explore and learn about various Nginx and Linux commands us
 ```bash
     # List all modules and config settings of NGINX Plus:
     nginx -V
+	# For prettier output:
+	nginx -V 2>&1 | awk -F: '/configure arguments/ {print $2}' | xargs -n1
 ```
 
 ```bash
